@@ -22,7 +22,7 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 bg-white shadow-md p-4 flex justify-between items-center">
       {/* E-commerce name with link to home */}
-      <Link href="/" className="md:text-2xl text-base sm:block  font-bold text-gray-800">
+      <Link href="/" className="md:text-2xl text-base  font-bold text-gray-800">
         E-Commerce
       </Link>
 
