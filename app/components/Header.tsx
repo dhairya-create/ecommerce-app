@@ -29,7 +29,7 @@ const Header = () => {
       {/* Cart link */}
       <Link href="/cart">
         <div className="flex items-center space-x-2 relative">
-          <span className="flex items-center text-lg font-bold">
+          <span className="flex items-center text-base md:text-lg font-bold">
             My Cart <FaCartShopping size={25} className="ml-2" />
           </span>
           <span
