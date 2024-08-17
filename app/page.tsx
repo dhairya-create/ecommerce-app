@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { useCart } from './context/CartContext';
@@ -9,6 +9,10 @@ interface Product {
   title: string;
   price: number;
   image: string;
+  rating: {
+    rate: number;
+    count: number;
+  };
 }
 
 const ProductsPage = () => {
@@ -55,7 +59,7 @@ const ProductsPage = () => {
   };
 
   return (
-    <div className="grid grid-cols-1 gap-8 p-6 mt-20 md:grid-cols-2 lg:grid-cols-3 ">
+    <div className="grid grid-cols-1 gap-8 p-6 mt-20 md:grid-cols-2 lg:grid-cols-3">
       {products.length > 0 ? (
         products.map((product) => (
           <div key={product.id} className="border p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
@@ -69,7 +73,17 @@ const ProductsPage = () => {
               />
             </div>
             <h2 className="text-lg font-bold mt-4 text-gray-800">{product.title}</h2>
-            <p className="text-sm text-gray-600">${product.price.toFixed(2)}</p>
+            <p className="text-lg font-semibold text-gray-600">${product.price.toFixed(2)}</p>
+
+           
+            <div className="mt-2 flex items-center">
+              <div className="bg-green-700 text-white text-sm px-2 py-1 rounded-md flex items-center">
+                <span className="mr-1">{product.rating.rate.toFixed(1)}</span>
+                <span className="text-white">★</span>
+              </div>
+              <span className="ml-2 text-gray-600 text-sm">({product.rating.count} reviews)</span>
+            </div>
+
             <div className="flex items-center justify-between mt-4">
               <div className="flex items-center space-x-2">
                 <button 

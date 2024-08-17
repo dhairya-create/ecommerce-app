@@ -21,12 +21,12 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 bg-white shadow-md p-4 flex justify-between items-center">
-      {/* E-commerce name with link to home */}
+     
       <Link href="/" className="md:text-2xl text-base  font-bold text-gray-800">
         E-Commerce
       </Link>
 
-      {/* Cart link */}
+      
       <Link href="/cart">
         <div className="flex items-center space-x-2 relative">
           <span className="flex items-center text-base md:text-lg font-bold">
